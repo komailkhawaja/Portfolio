@@ -924,3 +924,106 @@ button { font: inherit; cursor: pointer; }
   .work-bullets { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   Motion enhancements
+   - Hero word splits need to be inline blocks so the stagger
+     animates each word independently.
+   - 3D tilt uses CSS custom properties for a soft spotlight
+     that follows the cursor across the card.
+   - prefers-reduced-motion disables all of it cleanly.
+   ============================================================ */
+
+.hero-title .word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  transform: translateZ(0); /* contain stacking context */
+}
+
+.hero-title .word > em,
+.hero-title .word {
+  will-change: transform, opacity;
+}
+
+/* Hero sub/CTA/meta: hidden by JS, visible if motion lib fails */
+.hero .eyebrow,
+.hero .hero-sub,
+.hero .hero-cta,
+.hero .hero-meta {
+  opacity: 1;
+}
+
+/* 3D tilt + cursor spotlight for cards */
+.work-card,
+.skill-group,
+.edu-card,
+.extras-card,
+.timeline-content {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: box-shadow .25s ease, border-color .25s ease;
+}
+
+.work-card::before,
+.skill-group::before,
+.edu-card::before,
+.extras-card::before,
+.timeline-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 255, 255, 0.55),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity .25s ease;
+  mix-blend-mode: overlay;
+  z-index: 1;
+}
+.work-card:hover::before,
+.skill-group:hover::before,
+.edu-card:hover::before,
+.extras-card:hover::before,
+.timeline-content:hover::before {
+  opacity: 1;
+}
+
+/* Keep the card content above the spotlight */
+.work-meta,
+.skill-group,
+.edu-card,
+.extras-card > *,
+.timeline-content > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Smooth scrollbar feel */
+html.lenis,
+html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero .word,
+  .hero .eyebrow,
+  .hero .hero-sub,
+  .hero .hero-cta,
+  .hero .hero-meta { opacity: 1 !important; transform: none !important; }
+}
+
