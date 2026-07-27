@@ -266,49 +266,7 @@ form.addEventListener("submit", (e) => {
 })();
 
 /* ---------- 5c. Staggered card reveal (anime.js + IntersectionObserver) ---------- */
-(function staggerReveal() {
-  if (prefersReducedMotion || !anime) return;
-
-  const groups = [
-    { selector: ".work-card", y: 28 },
-    { selector: ".skill-group", y: 20 },
-    { selector: ".timeline-content", y: 24 },
-    { selector: ".edu-card", y: 20 },
-    { selector: ".extras-card", y: 20 },
-  ];
-
-  groups.forEach(({ selector, y }) => {
-    const els = document.querySelectorAll(selector);
-    if (!els.length) return;
-    const io = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const target = entry.target;
-          const siblings = Array.from(target.parentNode.children);
-          const idx = siblings.indexOf(target);
-          anime({
-            targets: target,
-            opacity: [0, 1],
-            translateY: [y, 0],
-            duration: 700,
-            delay: Math.min(idx, 6) * 70,
-            easing: "cubicBezier(.22,1,.36,1)",
-            complete: () => {
-              target.style.willChange = "";
-            },
-          });
-          obs.unobserve(target);
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
-    );
-    els.forEach((el) => {
-    //  el.style.opacity = "0";
-      el.style.willChange = "transform, opacity";
-      io.observe(el);
-    });
-  });
+(function staggerReveal()
 
   // Timeline markers: spring in
   const markers = document.querySelectorAll(".timeline-marker");
