@@ -304,7 +304,7 @@ form.addEventListener("submit", (e) => {
       { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
     );
     els.forEach((el) => {
-      el.style.opacity = "0";
+    //  el.style.opacity = "0";
       el.style.willChange = "transform, opacity";
       io.observe(el);
     });
