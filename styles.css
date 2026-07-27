@@ -540,9 +540,13 @@ button { font: inherit; cursor: pointer; }
   align-items: start;
 }
 .about-text p {
-  font-size: 18px;
-  color: var(--ink-soft);
-  margin: 0 0 20px;
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin-bottom: 20px;  /* Adds spacing between paragraphs */
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;  /* Remove margin from last paragraph */
 }
 
 /* ---------- Experience (Timeline) ---------- */
