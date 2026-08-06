@@ -1390,7 +1390,118 @@ button { font: inherit; cursor: pointer; }
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* --- Category Group Styling (New) --- */
+.category-group {
+  margin-bottom: 60px;
+}
 
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.category-header h3 {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -.01em;
+}
+
+.category-badge {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+  padding: 4px 12px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.sub-project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.sub-project-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  border-radius: var(--radius);
+  background: color-mix(in oklab, var(--card) 80%, transparent);
+  backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid color-mix(in oklab, var(--line) 50%, transparent);
+  transition: all 0.3s cubic-bezier(.22,1,.36,1);
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow);
+}
+
+.sub-project-card:hover {
+  transform: translateY(-4px);
+  border-color: #2db970;
+  box-shadow: var(--shadow-lg);
+  background: var(--card);
+}
+
+.sub-icon {
+  font-size: 28px;
+  line-height: 1;
+  padding-top: 2px;
+  transition: transform 0.3s ease;
+}
+
+.sub-project-card:hover .sub-icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.sub-meta h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  font-family: var(--serif);
+  transition: color 0.3s ease;
+}
+
+.sub-project-card:hover .sub-meta h4 {
+  color: #1a8a55;
+}
+
+.sub-meta p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+.sub-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sub-project-card:hover .sub-link {
+  color: #2db970;
+  gap: 8px;
+}
+
+/* Mobile adjustments for new grid */
+@media (max-width: 720px) {
+  .sub-project-grid {
+    grid-template-columns: 1fr;
+  }
+}
 /* ---------- Reduced Motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -1444,4 +1555,55 @@ button { font: inherit; cursor: pointer; }
   .skills-grid { grid-template-columns: 1fr; }
   .hero-title { font-size: clamp(32px, 8vw, 48px); }
   .scroll-progress-ring { bottom: 16px; right: 16px; width: 42px; height: 42px; }
+}
+/* --- Updated styles for separated Live Demo & Source Code links --- */
+.card-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.sub-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+.sub-link:hover {
+  color: #2db970;
+  gap: 8px;
+}
+
+.live-demo-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #2db970;
+  padding: 4px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(.22,1,.36,1);
+}
+
+.live-demo-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(45, 185, 112, 0.4);
+  color: #ffffff;
+}
+
+/* Fix for cards without a link (hardware projects) */
+.sub-project-card {
+  cursor: default;
+}
+.sub-project-card a {
+  cursor: pointer;
 }
