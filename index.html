@@ -5,21 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muhammad Komail Khawaja — AI Engineer</title>
   <meta name="description" content="Portfolio of Muhammad Komail Khawaja — AI engineer and Artificial Intelligence undergraduate based in Islamabad, Pakistan." />
-  <meta property="og:title" content="Muhammad Komail Khawaja — AI Engineer" />
-  <meta property="og:description" content="Portfolio of Muhammad Komail Khawaja — AI engineer building practical machine learning, computer vision, and software projects." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://github.com/komailkhawaja" />
-  <meta name="theme-color" content="#0e0e10" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230e0e10'/><text x='50%25' y='54%25' text-anchor='middle' fill='%23f5f4ef' font-family='Georgia,serif' font-size='34' font-weight='700'>k</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Page Transition Overlay -->
+  <div class="page-transition" id="pageTransition"></div>
+
+  <!-- Scroll Progress Ring -->
+  <div class="scroll-progress-ring" id="scrollRing">
+    <svg viewBox="0 0 56 56">
+      <circle class="bg" cx="28" cy="28" r="25" />
+      <circle class="progress" id="scrollRingProgress" cx="28" cy="28" r="25" />
+    </svg>
+    <div class="center-text" id="scrollPercent">0%</div>
+  </div>
+
+  <!-- Cursor Glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
   <header class="site-header" id="siteHeader">
     <div class="container nav">
-      <a href="#top" class="brand" aria-label="Muhammad Komail Khawaja home">
+      <a href="#top" class="brand" aria-label="Home">
         <span class="brand-mark">K</span>
         <span class="brand-text">Muhammad Komail Khawaja</span>
       </a>
@@ -31,87 +40,77 @@
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
-    <div class="nav-cta">
-  <a class="icon-link" href="https://github.com/komailkhawaja" target="_blank" rel="noopener" aria-label="GitHub">
-    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.7.5.7 5.6.7 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.6-3.9-1.6-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.9C23.3 5.6 18.3.5 12 .5z"/></svg>
-  </a>
-  <a class="icon-link" href="https://www.linkedin.com/in/komail-khawaja-77167137b/" target="_blank" rel="noopener" aria-label="LinkedIn">
-    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
-  </a>
-  <!-- NEW WHATSAPP ICON -->
-  <a class="icon-link" href="https://wa.me/923204908114?text=Hi%20Komail!" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-      <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </a>
-  <a href="#contact" class="btn btn-primary">Get in touch</a>
-</div>
-<button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-  <span></span><span></span><span></span>
-</button>
+      <div class="nav-cta">
+        <a class="icon-link" href="https://github.com/komailkhawaja" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 .5C5.7.5.7 5.6.7 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.6-3.9-1.6-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.9C23.3 5.6 18.3.5 12 .5z"/></svg>
+        </a>
+        <a class="icon-link" href="https://www.linkedin.com/in/komail-khawaja-77167137b/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a class="icon-link" href="https://wa.me/923204908114?text=Hi%20Komail!" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-primary">Get in touch</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
   <main id="top">
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" id="hero">
+      <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
       <div class="container hero-inner">
         <p class="eyebrow"><span class="dot"></span> AI engineer · Islamabad, Pakistan</p>
         <h1 class="hero-title">
-          I build <em>practical</em> AI systems<br />
-          with a focus on machine learning and data.
+          I build Practical AI systems<br />
+          with a focus on <span>Machine Learning</span> and Data.
         </h1>
         <p class="hero-sub">
-          I'm <strong>Muhammad Komail Khawaja</strong> — an Artificial Intelligence
-          undergraduate at Szabist University with a strong foundation in Python,
-          C++, SQL, machine learning, and data structures. I build AI-driven
-          solutions through academic projects, self-learning, and hands-on industry
-          experience.
+          I'm Muhammad Komail Khawaja — an Artificial Intelligence undergraduate at Szabist University with a strong foundation in Python, C++, SQL, machine learning, and data structures.
         </p>
-       <div class="hero-cta">
-  <a href="#work" class="btn btn-primary">See my projects <span aria-hidden="true">→</span></a>
-  <a href="#contact" class="btn btn-primary">Get in touch</a>
-<a href="/resume.pdf" download="Komail_Khawaja_CV.pdf" class="btn btn-primary">
-    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M5 20h14v-2H5v2zm7-18l-5 5h3v6h4V7h3l-5-5z"/></svg>
-    Résumé
-</a>
-</div>
-        <div class="hero-meta" aria-label="Quick stats">
-          <div class="stat">
-            <span class="stat-num">2</span>
-            <span class="stat-label">Industry internships</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">11</span>
-            <span class="stat-label">Academic projects</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">2024</span>
-            <span class="stat-label">BS Artificial Intelligence started</span>
-          </div>
+        <div class="hero-cta">
+          <a href="#work" class="btn btn-primary" data-magnetic>See my projects <span class="arrow">→</span></a>
+          <a href="#contact" class="btn btn-outline" data-magnetic>Get in touch</a>
+          <a href="/resume.pdf" download="Komail_Khawaja_CV.pdf" class="btn btn-outline" data-magnetic>
+            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M5 20h14v-2H5v2zm7-18l-5 5h3v6h4V7h3l-5-5z"/></svg>
+            Résumé
+          </a>
+        </div>
+        <div class="hero-meta">
+          <div class="stat"><span class="stat-num"><span class="counter" data-target="2">0</span></span><span class="stat-label">Industry internships</span></div>
+          <div class="stat"><span class="stat-num"><span class="counter" data-target="11">0</span></span><span class="stat-label">Academic projects</span></div>
+          <div class="stat"><span class="stat-num"><span class="counter" data-target="2024">0</span></span><span class="stat-label">BS Artificial Intelligence started</span></div>
         </div>
       </div>
-      <div class="hero-blob" aria-hidden="true"></div>
     </section>
 
     <!-- WORK -->
     <section class="section" id="work">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal-section">
           <p class="eyebrow"><span class="dot"></span> Selected work</p>
-          <h2 class="section-title">Projects I'm proud of</h2>
+          <h2 class="section-title">Projects I'm <span class="highlight">proud of</span></h2>
           <p class="section-sub">A selection of academic builds across software development, machine learning, hardware, and networking.</p>
         </div>
-
         <div class="work-grid">
-          <!-- ZabDelivers -->
-          <article class="work-card work-card-lg" style="--accent:#f0a868">
-            <div class="work-thumb work-thumb-translator" role="img" aria-label="ZabDelivers food delivery web app preview"></div>
+          <article class="work-card work-card-lg reveal-card glass" style="--accent:#f0a868">
+            <div class="work-thumb work-thumb-translator" role="img" aria-label="ZabDelivers preview"></div>
             <div class="work-meta">
               <div class="work-meta-top">
-                <span class="work-tag">Software &amp; web development</span>
+                <span class="work-tag">Software & web development</span>
                 <span class="work-lang">Full stack</span>
               </div>
-              <<h3><a href="https://github.com/komailkhawaja" target="_blank" style="text-decoration:none; color:inherit;">ZabDelivers — Food Delivery Web App</a></h3>
+              <h3><a href="https://github.com/komailkhawaja" target="_blank">ZabDelivers — Food Delivery Web App</a></h3>
               <p>A full-stack food delivery application designed around a relational database, multi-restaurant menus, order logs, and dynamic vendor experiences.</p>
               <ul class="work-bullets">
                 <li>Database schema for users, menus, and orders</li>
@@ -121,19 +120,14 @@
             </div>
           </article>
 
-          <!-- Machine Learning Projects -->
-          <article class="work-card" style="--accent:#7c8cff">
-            <div class="work-thumb work-thumb-orbit" role="img" aria-label="Machine learning projects preview"></div>
+          <article class="work-card reveal-card glass" style="--accent:#7c8cff">
+            <div class="work-thumb work-thumb-orbit" role="img" aria-label="ML projects preview"></div>
             <div class="work-meta">
               <div class="work-meta-top">
-                <span class="work-tag">AI &amp; machine learning</span>
+                <span class="work-tag">AI & machine learning</span>
                 <span class="work-lang">Python</span>
               </div>
-              <h3>
-  <a href="https://github.com/komailkhawaja" target="_blank" style="text-decoration:none; color:inherit;">
-    Applied ML Project Suite
-  </a>
-</h3>
+              <h3><a href="https://github.com/komailkhawaja" target="_blank">Applied ML Project Suite</a></h3>
               <p>Practical machine learning projects focused on behavioral data, vehicle pricing, and energy consumption analysis.</p>
               <ul class="work-bullets">
                 <li>Depression detection with NLP</li>
@@ -143,70 +137,50 @@
             </div>
           </article>
 
-          <!-- ATM Machine Simulator -->
-          <article class="work-card" style="--accent:#5fc7a7">
-            <div class="work-thumb work-thumb-heart" role="img" aria-label="ATM machine simulator preview"></div>
+          <article class="work-card reveal-card glass" style="--accent:#5fc7a7">
+            <div class="work-thumb work-thumb-heart" role="img" aria-label="ATM simulator preview"></div>
             <div class="work-meta">
               <div class="work-meta-top">
                 <span class="work-tag">Software development</span>
                 <span class="work-lang">C++</span>
               </div>
-<h3>
-  <a href="https://github.com/komailkhawaja" target="_blank" style="text-decoration:none; color:inherit;">
-    ATM Machine Simulator
-  </a>
-</h3>
+              <h3><a href="https://github.com/komailkhawaja" target="_blank">ATM Machine Simulator</a></h3>
               <p>An object-oriented desktop application with secure PIN validation, balance tracking, deposit and withdrawal handling, and robust error validation.</p>
             </div>
           </article>
 
-          <!-- Hotel Management System -->
-          <article class="work-card" style="--accent:#e36b6b">
-            <div class="work-thumb work-thumb-speech" role="img" aria-label="Hotel management system preview"></div>
+          <article class="work-card reveal-card glass" style="--accent:#e36b6b">
+            <div class="work-thumb work-thumb-speech" role="img" aria-label="Hotel management preview"></div>
             <div class="work-meta">
               <div class="work-meta-top">
                 <span class="work-tag">Software development</span>
                 <span class="work-lang">C++</span>
               </div>
-            <h3>
-  <a href="https://github.com/komailkhawaja" target="_blank" style="text-decoration:none; color:inherit;">
-    Hotel Management System
-  </a>
-</h3>
+              <h3><a href="https://github.com/komailkhawaja" target="_blank">Hotel Management System</a></h3>
               <p>A console application using object-oriented programming and file handling to persist guest records and transaction history.</p>
             </div>
           </article>
 
-          <!-- Network Design -->
-          <article class="work-card" style="--accent:#a78bfa">
-            <div class="work-thumb work-thumb-rag" role="img" aria-label="Enterprise network design preview"></div>
+          <article class="work-card reveal-card glass" style="--accent:#a78bfa">
+            <div class="work-thumb work-thumb-rag" role="img" aria-label="Network design preview"></div>
             <div class="work-meta">
               <div class="work-meta-top">
-                <span class="work-tag">Hardware &amp; networking</span>
+                <span class="work-tag">Hardware & networking</span>
                 <span class="work-lang">Cisco</span>
               </div>
-              <h3>
-  <a href="https://github.com/komailkhawaja" target="_blank" style="text-decoration:none; color:inherit;">
-    Enterprise Network Design &amp; Simulation
-  </a>
-</h3>
+              <h3><a href="https://github.com/komailkhawaja" target="_blank">Enterprise Network Design & Simulation</a></h3>
               <p>A scalable corporate network simulation using VLSM subnetting, inter-VLAN routing, DHCP pools, and access control lists.</p>
             </div>
           </article>
 
-          <!-- Decode Lab -->
-          <article class="work-card work-card-lg" style="--accent:#f4c95d">
-            <div class="work-thumb work-thumb-decodelabs" role="img" aria-label="Decode Lab AI and robotics internship projects preview"></div>
+          <article class="work-card work-card-lg reveal-card glass" style="--accent:#f4c95d">
+            <div class="work-thumb work-thumb-decodelabs" role="img" aria-label="Decode Lab preview"></div>
             <div class="work-meta">
               <div class="work-meta-top">
-                <span class="work-tag">AI &amp; robotics internship</span>
+                <span class="work-tag">AI & robotics internship</span>
                 <span class="work-lang">Python · OpenCV</span>
               </div>
-              <h3>
-  <a href="https://github.com/komailkhawaja" target="_blank" style="text-decoration:none; color:inherit;">
-    Decode Lab Engineering Series
-  </a>
-</h3>
+              <h3><a href="https://github.com/komailkhawaja" target="_blank">Decode Lab Engineering Series</a></h3>
               <p>An internship series spanning LLM prompt engineering, computer vision quality inspection, autonomous mobile robot navigation, and industrial automation.</p>
               <ul class="work-bullets">
                 <li>Structured JSON extraction with LLMs</li>
@@ -217,56 +191,40 @@
             </div>
           </article>
         </div>
-
-        <p class="more-projects">Want to discuss a project? <a href="#contact" class="inline-link">Get in touch →</a></p>
+        <p class="more-projects reveal-up">Want to discuss a project? <a href="#contact" class="inline-link">Get in touch</a></p>
       </div>
     </section>
 
     <!-- ABOUT -->
     <section class="section section-alt" id="about">
       <div class="container about-grid">
-        <div>
+        <div class="reveal-section">
           <p class="eyebrow"><span class="dot"></span> About me</p>
-          <h2 class="section-title">Curious about how machines learn from data.</h2>
+          <h2 class="section-title">Curious about how machines <span class="highlight">learn</span> from data.</h2>
         </div>
-        <div class="about-text">
-          <p>
-            I'm a dedicated Artificial Intelligence undergraduate who learns by
-            building. My foundation includes Python, C++, SQL, machine learning,
-            data structures, and software development.
-          </p>
-          <p>
-            My experience includes machine learning and deep learning model
-            development at CodeAlpha, along with AI and robotics engineering at
-            Decode Lab. I enjoy turning technical ideas into practical systems
-            with clear documentation and reliable results.
-          </p>
-          <p>
-            I'm currently expanding my skills across computer vision, natural
-            language processing, prompt engineering, embedded systems, and
-            networking while looking for opportunities to contribute to innovative
-            teams.
-          </p>
+        <div class="about-text reveal-section">
+          <p>I'm a dedicated Artificial Intelligence undergraduate who learns by building. My foundation includes Python, C++, SQL, machine learning, data structures, and software development.</p>
+          <p>My experience includes machine learning and deep learning model development at CodeAlpha, along with AI and robotics engineering at Decode Lab. I enjoy turning technical ideas into practical systems with clear documentation and reliable results.</p>
+          <p>I'm currently expanding my skills across computer vision, natural language processing, prompt engineering, embedded systems, and networking while looking for opportunities to contribute to innovative teams.</p>
         </div>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
-    <section class="section section-alt" id="experience">
+    <section class="section" id="experience">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal-section">
           <p class="eyebrow"><span class="dot"></span> Experience</p>
-          <h2 class="section-title">Where I've worked</h2>
+          <h2 class="section-title">Where I've <span class="highlight">worked</span></h2>
           <p class="section-sub">Hands-on experience across machine learning, deep learning, AI engineering, and robotics.</p>
         </div>
-
         <div class="timeline">
           <article class="timeline-item">
-            <div class="timeline-marker" aria-hidden="true"></div>
-            <div class="timeline-content">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass">
               <div class="timeline-head">
                 <div>
-                  <h3>AI &amp; Robotics Engineering Intern</h3>
+                  <h3>AI & Robotics Engineering Intern</h3>
                   <p class="timeline-org">Decode Lab</p>
                 </div>
                 <span class="timeline-date">2026 — Present</span>
@@ -274,19 +232,20 @@
               <p class="timeline-desc">Built AI and robotics systems for structured data extraction, manufacturing inspection, autonomous navigation, and industrial automation.</p>
               <ul class="timeline-bullets">
                 <li>Programmed LLMs for zero-shot and few-shot processing with deterministic JSON outputs</li>
-                <li>Engineered an OpenCV optical inspection framework using grayscale, blur, thresholding, and contours</li>
+                <li>Engineered an OpenCV optical inspection framework</li>
                 <li>Developed LiDAR-based mapping and obstacle avoidance with A* or Dijkstra pathfinding</li>
                 <li>Programmed conveyor sorting logic with Ladder Logic, finite state machines, and safety interlocks</li>
               </ul>
               <div class="timeline-tags">
-                <span>LLMs</span><span>Prompt Engineering</span><span>OpenCV</span><span>LiDAR</span><span>Robotics</span><span>PLC</span>
+                <span>LLMs</span><span>Prompt Engineering</span><span>OpenCV</span>
+                <span>LiDAR</span><span>Robotics</span><span>PLC</span>
               </div>
             </div>
           </article>
 
           <article class="timeline-item">
-            <div class="timeline-marker" aria-hidden="true"></div>
-            <div class="timeline-content">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass">
               <div class="timeline-head">
                 <div>
                   <h3>Machine Learning Intern</h3>
@@ -296,58 +255,53 @@
               </div>
               <p class="timeline-desc">Developed and optimized machine learning and deep learning models using Python, Scikit-learn, and TensorFlow.</p>
               <ul class="timeline-bullets">
-                <li>Built a credit scoring model with Logistic Regression and Random Forest, evaluated using Precision, Recall, and ROC-AUC</li>
-                <li>Engineered speech emotion recognition with CNN/LSTM models and MFCC features from RAVDESS and TESS</li>
+                <li>Built a credit scoring model with Logistic Regression and Random Forest</li>
+                <li>Engineered speech emotion recognition with CNN/LSTM models and MFCC features</li>
                 <li>Created CNN-based handwritten character recognition using MNIST and EMNIST</li>
                 <li>Implemented disease prediction pipelines using SVM, Random Forest, and XGBoost</li>
               </ul>
               <div class="timeline-tags">
-                <span>Python</span><span>Scikit-learn</span><span>TensorFlow</span><span>CNN/LSTM</span><span>Model Evaluation</span>
+                <span>Python</span><span>Scikit-learn</span><span>TensorFlow</span>
+                <span>CNN/LSTM</span><span>Model Evaluation</span>
               </div>
             </div>
           </article>
-
         </div>
       </div>
     </section>
 
     <!-- EDUCATION -->
-    <section class="section" id="education">
+    <section class="section section-alt" id="education">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal-section">
           <p class="eyebrow"><span class="dot"></span> Education</p>
-          <h2 class="section-title">What I've studied</h2>
+          <h2 class="section-title">What I've <span class="highlight">studied</span></h2>
           <p class="section-sub">An Artificial Intelligence foundation supported by computer science, mathematics, and science studies.</p>
         </div>
-
         <div class="edu-grid">
-          <article class="edu-card">
+          <article class="edu-card reveal-card glass">
             <div class="edu-period">2024 — Present</div>
             <h3>Bachelor of Science in Artificial Intelligence</h3>
             <p class="edu-school">Szabist University</p>
             <p class="edu-desc">Undergraduate study focused on artificial intelligence, machine learning, software development, and data.</p>
             <ul class="edu-courses">
-              <li>Artificial Intelligence</li>
-              <li>Machine Learning</li>
-              <li>Python</li>
-              <li>C++</li>
-              <li>SQL</li>
-              <li>Data Structures</li>
+              <li>Artificial Intelligence</li><li>Machine Learning</li>
+              <li>Python</li><li>C++</li>
+              <li>SQL</li><li>Data Structures</li>
             </ul>
           </article>
 
-          <article class="edu-card">
+          <article class="edu-card reveal-card glass">
             <div class="edu-period">2022 — 2024</div>
             <h3>Intermediate (ICS)</h3>
             <p class="edu-school">Punjab College of Science Blue Area Islamabad</p>
             <p class="edu-desc">Intermediate studies in computer science and mathematics.</p>
             <ul class="edu-courses">
-              <li>Computer Science</li>
-              <li>Mathematics</li>
+              <li>Computer Science</li><li>Mathematics</li>
             </ul>
           </article>
 
-          <article class="edu-card">
+          <article class="edu-card reveal-card glass">
             <div class="edu-period">2020 — 2022</div>
             <h3>Matriculation (Science)</h3>
             <p class="edu-school">Adnan Hussain Shaheed Model College for Boys</p>
@@ -361,152 +315,112 @@
     </section>
 
     <!-- CERTIFICATIONS -->
-    <section class="section section-alt" id="extras">
+    <section class="section" id="extras">
       <div class="container">
         <div class="extras-grid">
-          <article class="extras-card">
-            <p class="eyebrow"><span class="dot"></span> AI &amp; machine learning</p>
+          <article class="extras-card reveal-card glass">
+            <p class="eyebrow"><span class="dot"></span> AI & machine learning</p>
             <h3>OpenAI Academy certifications</h3>
             <p class="extras-title">Agents and Workflows · Applied AI Foundations · AI Foundations</p>
             <p class="extras-meta">Completed in July 2026 through OpenAI Academy, with additional AI fundamentals training from Cisco Networking Academy and IBM SkillsBuild.</p>
-            <a href="mailto:komailkhawaja611@gmail.com?subject=AI certification details" class="link-arrow">Request details <span>→</span></a>
+            <a href="mailto:komailkhawaja611@gmail.com" class="link-arrow">Request details <span>→</span></a>
           </article>
 
-          <article class="extras-card">
-            <p class="eyebrow"><span class="dot"></span> Data, development &amp; networking</p>
+          <article class="extras-card reveal-card glass">
+            <p class="eyebrow"><span class="dot"></span> Data, development & networking</p>
             <h3>Technical certifications</h3>
             <p class="extras-title">SQL · Data Science · Python · C++ · Cisco Packet Tracer · Microsoft Excel</p>
             <p class="extras-meta">Credentials from Kaggle, Cisco Networking Academy, OpenEDG Python Institute, C++ Institute, and Coursera.</p>
-            <a href="mailto:komailkhawaja611@gmail.com?subject=Technical certification details" class="link-arrow">Request details <span>→</span></a>
+            <a href="mailto:komailkhawaja611@gmail.com" class="link-arrow">Request details <span>→</span></a>
           </article>
         </div>
       </div>
     </section>
 
     <!-- SKILLS -->
-    <section class="section" id="skills">
+    <section class="section section-alt" id="skills">
       <div class="container">
-        <div class="section-head">
-          <p class="eyebrow"><span class="dot"></span> Skills &amp; tools</p>
-          <h2 class="section-title">What I work with</h2>
+        <div class="section-head reveal-section">
+          <p class="eyebrow"><span class="dot"></span> Skills & tools</p>
+          <h2 class="section-title">What I <span class="highlight">work with</span></h2>
           <p class="section-sub">A practical toolkit spanning programming, AI, data, networking, and collaboration.</p>
         </div>
-
         <div class="skills-grid">
-          <div class="skill-group">
-            <h3>Programming &amp; development</h3>
-            <ul>
-              <li>C++</li>
-              <li>Python</li>
-              <li>SQL</li>
-              <li>Object-Oriented Programming</li>
-            </ul>
+          <div class="skill-group reveal-card glass">
+            <h3>Programming & development</h3>
+            <ul><li>C++</li><li>Python</li><li>SQL</li><li>Object-Oriented Programming</li></ul>
           </div>
-          <div class="skill-group">
+          <div class="skill-group reveal-card glass">
             <h3>Artificial intelligence</h3>
-            <ul>
-              <li>Machine Learning</li>
-              <li>Deep Learning basics</li>
-              <li>Data Analysis</li>
-              <li>Computer Vision basics</li>
-              <li>Natural Language Processing basics</li>
-            </ul>
+            <ul><li>Machine Learning</li><li>Deep Learning basics</li><li>Data Analysis</li><li>Computer Vision basics</li><li>Natural Language Processing basics</li></ul>
           </div>
-          <div class="skill-group">
-            <h3>Libraries &amp; frameworks</h3>
-            <ul>
-              <li>Scikit-learn</li>
-              <li>TensorFlow</li>
-              <li>NumPy · Pandas</li>
-              <li>Matplotlib</li>
-              <li>OpenCV</li>
-              <li>Open-source LLMs</li>
-            </ul>
+          <div class="skill-group reveal-card glass">
+            <h3>Libraries & frameworks</h3>
+            <ul><li>Scikit-learn</li><li>TensorFlow</li><li>NumPy · Pandas</li><li>Matplotlib</li><li>OpenCV</li><li>Open-source LLMs</li></ul>
           </div>
-          <div class="skill-group">
-            <h3>Tools &amp; soft skills</h3>
-            <ul>
-              <li>Git &amp; GitHub</li>
-              <li>VS Code · Jupyter · Colab</li>
-              <li>Microsoft Office</li>
-              <li>Problem solving</li>
-              <li>Communication · Teamwork</li>
-              <li>Leadership</li>
-            </ul>
+          <div class="skill-group reveal-card glass">
+            <h3>Tools & soft skills</h3>
+            <ul><li>Git & GitHub</li><li>VS Code · Jupyter · Colab</li><li>Microsoft Office</li><li>Problem solving</li><li>Communication · Teamwork</li><li>Leadership</li></ul>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-   <section class="section section-cta" id="contact">
-  <div class="container cta-inner">
-    <h2 class="cta-title">Let's work together.</h2>
-    <p class="cta-sub">Open to machine learning, AI engineering, and software opportunities. The fastest way to reach me is email — or send a message here and I'll get back to you.</p>
+    <section class="section section-cta" id="contact">
+      <div class="container cta-inner">
+        <h2 class="cta-title reveal-up">Let's <span class="highlight">work together</span>.</h2>
+        <p class="cta-sub reveal-up">Open to machine learning, AI engineering, and software opportunities. The fastest way to reach me is email — or send a message here and I'll get back to you.</p>
+        
+        <div class="reveal-up" style="margin-bottom:32px">
+          <a class="btn btn-primary btn-lg" href="/resume.pdf" download="Komail_Khawaja_CV.pdf" data-magnetic>
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M5 20h14v-2H5v2zm7-18l-5 5h3v6h4V7h3l-5-5z"/></svg>
+            Download résumé (PDF)
+          </a>
+        </div>
 
-    <!-- DOWNLOAD RESUME - CENTERED ABOVE -->
-   <div class="resume-row" style="justify-content: center; margin-bottom: 32px;">
-    <a class="btn btn-primary btn-lg" href="/resume.pdf" download="Komail_Khawaja_CV.pdf">
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M5 20h14v-2H5v2zm7-18l-5 5h3v6h4V7h3l-5-5z"/></svg>
-        Download résumé (PDF)
-    </a>
-</div>
-    <p style="text-align: center; color: var(--muted); font-size: 13px; margin: -20px 0 32px 0;">
-      Right-click → "Save link as" if the download doesn't start.
-    </p>
+        <div class="contact-actions reveal-up">
+          <a class="btn btn-primary btn-lg" href="mailto:komailkhawaja611@gmail.com" data-magnetic>
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7L4 6h16l-8 6zm-9 5l7-5 2 1.5L14 12l7 5H3z"/></svg>
+            Email
+          </a>
+          <a class="btn btn-outline btn-lg" href="https://www.linkedin.com/in/komail-khawaja-77167137b/" target="_blank" rel="noopener" data-magnetic>
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn btn-outline btn-lg" href="https://github.com/komailkhawaja" target="_blank" rel="noopener" data-magnetic>
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 .5C5.7.5.7 5.6.7 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.6-3.9-1.6-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.9C23.3 5.6 18.3.5 12 .5z"/></svg>
+            GitHub
+          </a>
+          <a class="btn btn-outline btn-lg" href="https://wa.me/923204908114?text=Hi%20Komail%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!" target="_blank" rel="noopener" data-magnetic>
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+        </div>
 
-    <!-- ALL CONTACT BUTTONS IN ONE ROW -->
-   <div class="contact-actions" style="display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; max-width: 100%;">
-  <!-- GMAIL - Black (btn-primary) -->
-  <a class="btn btn-primary btn-lg" href="mailto:komailkhawaja611@gmail.com" style="white-space: nowrap;">
-    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7L4 6h16l-8 6zm-9 5l7-5 2 1.5L14 12l7 5H3z"/></svg>
-    Email
-  </a>
-  
-  <!-- LINKEDIN - Now Black -->
-  <a class="btn btn-primary btn-lg" href="https://www.linkedin.com/in/komail-khawaja-77167137b/" target="_blank" rel="noopener" style="white-space: nowrap;">
-    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
-    LinkedIn
-  </a>
-  
-  <!-- GITHUB - Now Black -->
-  <a class="btn btn-primary btn-lg" href="https://github.com/komailkhawaja" target="_blank" rel="noopener" style="white-space: nowrap;">
-    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.7.5.7 5.6.7 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.6-3.9-1.6-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.9C23.3 5.6 18.3.5 12 .5z"/></svg>
-    GitHub
-  </a>
-  
-  <!-- WHATSAPP - Now Black -->
-  <a class="btn btn-primary btn-lg" href="https://wa.me/923204908114?text=Hi%20Komail%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!" target="_blank" rel="noopener" style="white-space: nowrap;">
-    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-      <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-    WhatsApp
-  </a>
-</div>
-
-    <!-- CONTACT FORM (Keep this if you want it) -->
-    <form class="contact-form" id="contactForm" novalidate style="margin-top: 40px;">
-      <div class="field">
-        <label for="name">Your name</label>
-        <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required />
+          </div>
+          <div class="field field-full">
+            <label for="message">Your message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Hi Komail — I came across your project on…"></textarea>
+          </div>
+          <div class="field-full form-actions">
+            <button type="submit" class="btn btn-primary btn-lg" data-magnetic>Send message <span class="arrow">→</span></button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </div>
+        </form>
       </div>
-      <div class="field">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="you@company.com" required />
-      </div>
-      <div class="field field-full">
-        <label for="message">Your message</label>
-        <textarea id="message" name="message" rows="4" placeholder="Hi Komail — I came across your project on…"></textarea>
-      </div>
-      <div class="field-full form-actions">
-        <button type="submit" class="btn btn-primary btn-lg">Send message <span aria-hidden="true">→</span></button>
-        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-      </div>
-    </form>
-  </div>
-</section>
+    </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
@@ -525,18 +439,14 @@
         <a href="#contact">Contact</a>
       </div>
       <div class="footer-meta">
-        <span>© <span id="year"></span> Muhammad Komail Khawaja</span>
+        <span>&copy; <span id="year"></span> Muhammad Komail Khawaja</span>
         <a href="mailto:komailkhawaja611@gmail.com">Email</a>
-        <a href="https://github.com/komailkhawaja" target="_blank" rel="noopener">Github</a>
-        <a href="https://www.linkedin.com/in/komail-khawaja-77167137b/" target="_blank" rel="noopener">Linkedin</a>
+        <a href="https://github.com/komailkhawaja" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/komail-khawaja-77167137b/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </footer>
 
-  <!-- Lenis (smooth scroll) -->
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-  <!-- anime.js v3 (UMD) — stagger reveals, micro-interactions, tween loop -->
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
